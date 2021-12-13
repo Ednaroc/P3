@@ -2,19 +2,50 @@
 <html lang="en">
     <head>
         <!-- GENERAL INFO -->
-        <title>Booki</title>
+        <title>Ohmyfood</title>
         <meta charset="utf-8">
         <meta name="description" content="Find a place for your dream vacation">
-        <meta name="keywords" content="holidays, accomodation, activity">
+        <meta name="keywords" content="food, ordering, menu, restaurant, gastronomic">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <!-- LINKS TO CSS FILE ("STYLESHEET") AND SITE ICON -->
-        <link href="css/style-clean.css" type="text/css" rel="stylesheet">
-        <link href="images/logo/Booki.png" type="image/x-icon" rel="shortcut icon" >
+        <link href="css/style.css" type="text/css" rel="stylesheet">
+        <link href="images/logo/ohmyfood@2x.svg" type="image/x-icon" rel="shortcut icon" >
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;700;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&family=Shrikhand&display=swap" rel="stylesheet">
     </head>
     <body>
-        
+        <header>
+            <div class="logo"><a href="#"><img src="images/logo/ohmyfood@2x.svg" alt="Logo"></a></div>
+        </header>
+        <form class="search-form" action="#">
+            <button class="b-map" type="submit"><i class="fas fa-map-marker-alt"></i></button>
+            <input type="text" placeholder="Paris, Belleville" name="Search">
+        </form>
+        <section class="intro-text">
+            <h1>Book the menu you like</h1>
+            <p>Discover top-of-the-art restaurants we picked for you</p>
+            <a class="nav-item" href="#C1">Explore our restaurants</a>
+        </section>
+        <section class="intro-steps">
+            <h1>How it works</h1>
+            <ol>
+                <li><a href="#C1"><i class="fas fa-mobile-alt"></i>Chose a restaurant</a></li>
+                <li><a href="#"><i class="fas fa-list-ul"></i>Create your menu</a></li>
+                <li><a href="#"><i class="fas fa-store"></i>Go enjoy it at the restaurant</a></li>
+            </ol>
+        </section>
+        <main>
+            <h1 id="C1">Restaurants</h1>
+        </main>
+        <footer>
+            <div><a href="#"><img src="images/logo/ohmyfood@2x.svg" alt="Logo"></a></div>
+            <ul>
+                <li><a href="#">Suggest a restaurant</a></li>
+                <li><a href="#">Become a partner</a></li>
+                <li><a href="#">Legal</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </footer>
     </body>
