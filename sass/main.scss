@@ -1,55 +1,100 @@
-/* ------------- BODY ------------------------ */
+@import "./utils/variables";
+
+@import "./base/base";
+@import "./base/typography";
+
+/* ------------- to delete ------------------------ */
 * {
-    margin: 0;
-    padding: 0;
     /*word-wrap: break-word;*/
-    font-family: 'Shrikhand', cursive;
-    font-family: 'Roboto', sans-serif;
-    
-    /* border: 1px dashed black; */
-}
-html {
-    box-sizing: border-box;
-    scroll-behavior: smooth;
-}
-*, *:before, *:after {
-    box-sizing: inherit;
+    border: 1px dashed black;
 }
 * > a {
     text-decoration: none;
     color: black;
 }
 
-.logo {
+// _header.scss
+.header {
     text-align: center;
 }
-.search-form {
+
+// _form.scss
+.search {
     text-align: center;
-    background-color: #eaeaea;
-    color: #353535;
+    background-color: $color-form;
+    padding: 10px;
+    box-shadow: inset 0 5px 3px -3px darken($color-form,15%);
+    & input {
+        border: none;
+        background-color: $color-form;
+        color: #353535;
+        &:focus {
+            outline: none;
+        }
+    }
+    & button {
+        border: none;
+        color: #353535;
+        margin-right: 10px;
+    }
 }
-.intro-text {
+
+// _homepage.scss
+.intro {
     text-align: center;
-    background-color: #f6f6f6;
+    background-color: $color-bckgrd;
+    padding: 10px;
+    &__byline {
+        margin: 5%;
+    }
+    &__nav {
+        border-radius: 50px;
+        padding: 12px 24px;
+        color: white;
+        background-image: linear-gradient(170deg, $color-2, $color-1);
+        filter: drop-shadow(0 5px 3px darken($color-bckgrd,10%));
+        // opacity??
+        &:hover {
+            background-image: linear-gradient(170deg, lighten($color-2, 10%), lighten($color-1, 10%));
+            filter: drop-shadow(0 5px 3px darken($color-bckgrd,20%));
+        }
+    }
 }
-.intro-text p {
-    text-align: center;
-    /* width: 90%; */
-    margin: 0 5%;
-}
-.intro-text a {
-    border-radius: 50px;
-    padding: 12px 24px;
-    color: white;
-    background-image: linear-gradient(to bottom right, #ff79da, #9356dc);
-}
-.intro-steps .i {
+
+
+.steps i {
     background-color: #7e7e7e;
 }
-.intro-steps a:hover {
+.steps a:hover {
     background-color: #f5edff;
 }
-footer {
+.steps ol {
+    display: flex;
+}
+.steps li {
+    padding: 10px;
+}
+
+
+
+.resto-grid {
+    display: flex;
+}
+
+.resto-prev {
+
+}
+
+// _footer.scss
+.footer {
     background-color: #353535;
-    color: white;
+    & * {
+        color: white;
+    }
+    & img {
+        fill: white;
+    }
+    & i {
+        width: 25px;
+    }
 }
