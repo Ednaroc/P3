@@ -1,20 +1,188 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <!-- GENERAL INFO -->
-        <title>Booki</title>
         <meta charset="utf-8">
-        <meta name="description" content="Find a place for your dream vacation">
-        <meta name="keywords" content="holidays, accomodation, activity">
+        <meta name="description" content="Compose your own menu from gastronomic restaurants">
+        <meta name="keywords" content="food, ordering, menu, restaurant, gastronomic">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <!-- LINKS TO CSS FILE ("STYLESHEET") AND SITE ICON -->
-        <link href="css/style-clean.css" type="text/css" rel="stylesheet">
-        <link href="images/logo/Booki.png" type="image/x-icon" rel="shortcut icon" >
+        <link href="public/css/style.css" type="text/css" rel="stylesheet">
+        <link href="public/images/logo/ohmyfood@2x.svg" type="image/x-icon" rel="shortcut icon" >
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.1/css/all.css" crossorigin="anonymous">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;700;900&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&family=Shrikhand&display=swap" rel="stylesheet">
+        <title>Ohmyfood</title>
     </head>
     <body>
-        
+        <header class="header">
+            <div class="header__logo"><a href="#"><img src="public/images/logo/ohmyfood@2x.svg" alt="Logo"></a></div>
+        </header>
+        <form class="search" action="#">
+            <button class="search__btn" type="submit"><i class="fas fa-map-marker-alt"></i></button>
+            <input type="text" placeholder="Paris, Belleville" name="search">
+        </form>
+        <section class="intro">
+            <h1 class="intro__heading">Book the menu you like</h1>
+            <p class="intro__byline">Discover top-of-the-art restaurants we picked for you</p>
+            <a class="intro__nav" href="#C1">Explore our restaurants</a>
+            <!-- <button class="intro__btn" onclick="location.href='/contact.html'">Explore our restaurants</button> -->
+        </section>
+        <section class="steps">
+            <h1 class="steps__heading">How it works</h1>
+            <div class="steps__steps">
+                <a class="steps__links" href="#C1"><span>1</span><i class="fas fa-mobile-alt"></i>Chose a restaurant</a>
+                <a class="steps__links" href="#"><span>2</span><i class="fas fa-list-ul"></i>Create your menu</a>
+                <a class="steps__links steps__links--active" href="#"><span>3</span><i class="fas fa-store"></i>Go enjoy it at the restaurant</a>
+            </div>
+        </section>
+        <main class="container">
+            <h1 id="container__heading">Restaurants</h1>
+            <div class="resto-grid">
+
+                <div class="resto-card">
+                    <a class="resto-card__link" href="menu-1.html">
+                        <div class="resto-card__media">
+                            <img class="resto-card__image" src="public/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="">
+                            <div class="resto-card__media-content">New</div>
+                        </div>
+                        <div class="resto-card__primary">
+                            <h2 class="resto-card__heading">The Full Palette</h2>
+                            <h3 class="resto-card__byline">New York</h3>
+                            <div class="resto-card__actions">
+                                <button class="resto-card__action--icon" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
+                                    <!-- <i class="far fa-heart"></i>
+                                    <i class="fas fa-heart"></i> -->
+                                    <div class="resHeartMove">
+                                        <div class="resHeartContain">
+                                            <div onclick="void(0);" class="resHeartTop"><i class="far fa-heart"></i></div>
+                                            <div class="resHeartBottom"><i class="fas fa-heart"></i></div>
+                                        </div>
+    
+                                </button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="resto-card">
+                    <a class="resto-card__link" href="menu-2.html">
+                        <div class="resto-card__media">
+                            <img class="resto-card__image" src="public/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt="">
+                            <div class="resto-card__media-content">New</div>
+                        </div>
+                        <div class="resto-card__primary">
+                            <h2 class="resto-card__heading">The Enchanted Plate</h2>
+                            <h3 class="resto-card__byline">New York</h3>
+                            <div class="resto-card__actions">
+                                <button class="resto-card__action--icon" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="resto-card">
+                    <a class="resto-card__link" href="menu-1.html">
+                        <div class="resto-card__media">
+                            <img class="resto-card__image" src="public/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt="">
+                        </div>
+                        <div class="resto-card__primary">
+                            <h2 class="resto-card__heading">Bastille</h2>
+                            <h3 class="resto-card__byline">New York</h3>
+                            <div class="resto-card__actions">
+                                <button class="resto-card__action--icon" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="resto-card">
+                    <a class="resto-card__link" href="menu-1.html">
+                        <div class="resto-card__media">
+                            <img class="resto-card__image" src="public/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="">
+                        </div>
+                        <div class="resto-card__primary">
+                            <h2 class="resto-card__heading">Le Gourmand</h2>
+                            <h3 class="resto-card__byline">New York</h3>
+                            <div class="resto-card__actions">
+                                <button class="resto-card__action--icon" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
+                                    <i class="far fa-heart"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+             
+                <!-- Parent of each item's image element, responsible for constraining aspect ratio -->
+
+
+                <!-- <div class="mdc-card demo-card">
+                    <div class="mdc-card__primary-action demo-card__primary-action" tabindex="0">
+                      <div class="mdc-card__media mdc-card__media--16-9 demo-card__media" style="background-image: url(&quot;https://material-components.github.io/material-components-web-catalog/static/media/photos/3x2/2.jpg&quot;);"></div>
+                        <div class="mdc-card__media-content demo-card__media-content">
+                            <div class="demo-card__secondary mdc-typography mdc-typography--body2">New</div>
+                        </div>
+                      <div class="demo-card__primary">
+                        <h2 class="demo-card__title mdc-typography mdc-typography--headline6">Restaurant Name</h2>
+                        <h3 class="demo-card__subtitle mdc-typography mdc-typography--subtitle2">Restaurant City</h3>
+                      </div>
+                    </div>
+
+                    <div class="mdc-card__actions">
+                      <div class="mdc-card__action-buttons">
+                        <button class="mdc-button mdc-card__action mdc-card__action--button">  <span class="mdc-button__ripple"></span> Read</button>
+                      </div>
+                      <div class="mdc-card__action-icons">
+                        <button class="mdc-icon-button mdc-card__action mdc-card__action--icon--unbounded" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
+                          <i class="material-icons mdc-icon-button__icon mdc-icon-button__icon--on">favorite</i>
+                          <i class="material-icons mdc-icon-button__icon">favorite_border</i>
+                        </button>
+                      </div>
+                    </div>
+                </div> -->
+
+                <!-- <section class="resto-prev">
+                    <a class="resto-prev" href="menu-1.html"></a>
+                        <div class="resto-prev__image"><img src="public/images/restaurants/stil-u2Lp8tXIcjw-unsplash.jpg" alt=""></div>
+                        <div class="resto-prev__content">
+                            <h1 class="resto-prev__heading">Restaurant name</h1>
+                            <p class="resto-prev__byline">Restaurant city</p>
+                        </div>
+                    </a>
+                </section>
+                <section class="resto-prev">
+                    <a class="resto-prev" href="menu-1.html"></a>
+                    <div class="resto-prev__image"><img src="public/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg" alt=""></div>
+                        <div class="resto-prev__content">
+                            <h1 class="resto-prev__heading">Restaurant name</h1>
+                            <p class="resto-prev__byline">Restaurant city</p>
+                        </div>
+                    </a>
+                </section>
+                <section class="resto-prev">
+                    <a class="resto-prev" href="menu-1.html"></a>
+                    <div class="resto-prev__image"><img src="public/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt=""></div>
+                        <div class="resto-prev__content">
+                            <h1 class="resto-prev__heading">Restaurant name</h1>
+                            <p class="resto-prev__byline">Restaurant city</p>
+                        </div>
+                    </a>
+                </section> -->
+            </div> 
+        </main>
+        <footer class="footer">
+            <div class="footer__logo"><a href="#"><img src="public/images/logo/ohmyfood@2x.svg" alt="Logo"></a></div>
+            <nav class="footer__nav">
+                <ul>
+                    <li><a href="#"><i class="fas fa-utensils"></i>Suggest a restaurant</a></li>
+                    <li><a href="#"><i class="fas fa-hands-helping"></i>Become a partner</a></li>
+                    <li><a href="#">Legal</a></li>
+                    <li><a href="mailto:contact@ohmyfood.com">Contact</a></li>
+                </ul>
+            </nav>
+        </footer>
     </body>
+</html>
