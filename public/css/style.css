@@ -184,14 +184,19 @@ a {
   padding: 18px 16px;
 }
 .resto-card__action--icon {
+  border: none;
   background-color: white;
   position: absolute;
   bottom: 2rem;
   right: 1rem;
-  border: none;
+  opacity: 1;
+  transition: opacity 4s;
 }
-.resto-card__action--icon :hover {
-  color: #9356dc;
+.resto-card__action--icon:hover .far {
+  opacity: 0;
+}
+.resto-card__action--icon:hover .fas {
+  opacity: 1;
 }
 
 .resHeartMove {

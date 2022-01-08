@@ -206,14 +206,20 @@ a {
         padding: 18px 16px;
     }
     &__action--icon {
+        border: none;
         background-color: white;
         position: absolute;
         bottom: 2rem;
         right: 1rem;
-        border: none;
-        :hover {
-            color: $color-1;
-            // background-color: $color-2;
+        opacity: 1;
+        transition: opacity 4s;
+        &:hover {
+            & .far {
+                opacity: 0;
+            }
+            & .fas {
+                opacity: 1;
+            }
         }
     }
 }
@@ -232,17 +238,6 @@ a {
             font-size:2em;
         }
     }
-
-
-
-// .fa-heart {
-//     color: linear-gradient(170deg, $color-2, $color-1);
-//     // background-color: red;
-// }
-// .heart {
-//     fill: red;
-//     background-image: linear-gradient(170deg, $color-2, $color-1);
-// }
 
 
 
