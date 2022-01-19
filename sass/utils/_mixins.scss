@@ -7,3 +7,23 @@
 @mixin transition-ease {
     transition: all 0.5s ease-in-out;
 }
+
+@mixin btn {
+    border: none;
+    border-radius: 50px;
+    padding: 12px 24px;
+    color: white;
+    background-image: linear-gradient(170deg, $color-2, $color-1);
+    filter: drop-shadow(0 5px 3px darken($color-bckgrd,10%));
+    // opacity??
+    &:hover {
+        background-image: linear-gradient(170deg, lighten($color-2, 10%), lighten($color-1, 10%));
+        filter: drop-shadow(0 5px 3px darken($color-bckgrd,20%));
+    }
+}
+
+@mixin interaction-query($pointing-quality) {
+    @media (pointer: $pointing-quality) {
+        @content;
+    }
+}

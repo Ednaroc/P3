@@ -14,14 +14,102 @@ a {
     text-decoration: none;
     color: black;
 }
-
-
-
-
+.loader {
+    position: fixed;
+    // left: 50%;
+    // top: 50%;
+    z-index: 1;
+    width: 100vw;
+    height: 100vh;
+    background-color: $color-footer;
+    opacity: .8;
+}
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    left: 50%;
+    top: 50%;
+    width: 80px;
+    height: 80px;
+  }
+  .lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid $color-1;
+    // border: 8px solid transparent;
+    // background-image: linear-gradient(white, white), radial-gradient(circle at top left, $color-2, $color-1);
+    // background-origin: border-box;
+    // background-clip: content-box, border-box;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) 1s;
+    border-color: $color-1 transparent transparent transparent;
+    // border-color: transparent white white white;
+  }
+  .lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+  }
+  .lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+  }
+  .lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+  }
+  @keyframes lds-ring {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+  
+  
+  }
+.loader {
+    animation: hideme 0s 3s;
+    animation-fill-mode: forwards;
+}
+@keyframes hideme {
+    to {
+        visibility: hidden;
+    }
+}
 
 // _header.scss
 .header {
-    text-align: center;
+    // padding: 10px;
+    height: 50px;
+    width: 100%;
+    // display: flex;
+    // align-items: center;
+    // justify-content: center;
+    position: relative;
+    &__logo {
+        // border: 1px dashed black;
+        img {
+            width: 90%;
+        }
+        margin: 0;
+        padding: 0;
+        margin-top: 3px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        // position: absolute;
+        // left: 50%;
+    }
+    &__back {
+        // margin-right: auto;
+        padding: 3px 20px;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        transform: translate(0, -50%);
+    }
 }
 
 // _form.scss
@@ -34,14 +122,24 @@ a {
         border: none;
         background-color: $color-form;
         color: #353535;
+        font: 600 0.85rem 'Roboto';
+        // text-align: center;
+        // font-weight: 600;
+        // font-family: 'Roboto';
+        // font-size: 0.85rem;
         &:focus {
             outline: none;
+        }
+        padding: 0.5em;
+        &::placeholder {
+            font: 600 0.9rem 'Roboto';
         }
     }
     button {
         border: none;
         color: #353535;
         margin-right: 10px;
+        font-size: 1rem;
     }
 }
 
@@ -49,38 +147,51 @@ a {
 .intro {
     text-align: center;
     background-color: $color-bckgrd;
-    padding: 10px;
+    padding: 2em 0 4em 0;
     &__byline {
-        margin: 5%;
+        margin: 2.2em;
+        font-weight: 300;
     }
     &__nav {
-        border-radius: 50px;
-        padding: 12px 24px;
-        color: white;
-        background-image: linear-gradient(170deg, $color-2, $color-1);
-        filter: drop-shadow(0 5px 3px darken($color-bckgrd,10%));
-        // opacity??
-        &:hover {
-            background-image: linear-gradient(170deg, lighten($color-2, 10%), lighten($color-1, 10%));
-            filter: drop-shadow(0 5px 3px darken($color-bckgrd,20%));
-        }
+        // border-radius: 50px;
+        // padding: 12px 24px;
+        // color: white;
+        // background-image: linear-gradient(170deg, $color-2, $color-1);
+        // filter: drop-shadow(0 5px 3px darken($color-bckgrd,10%));
+        // // opacity??
+        // &:hover {
+        //     background-image: linear-gradient(170deg, lighten($color-2, 10%), lighten($color-1, 10%));
+        //     filter: drop-shadow(0 5px 3px darken($color-bckgrd,20%));
+        // }
+        @include btn;
+        font-weight: 400;
     }
 }
 
 
 .steps {
+    padding: 3em 4vw;
+    &__heading {
+        padding-bottom: 1.5rem;
+    }
     &__steps {
+        // border: 1px dashed black;
         display: flex;
         flex-flow: column;
+        flex: 1 1 auto;
         gap: 20px;
+        padding-left: 15px;
         align-items: center;
+        justify-content: center;
         @include media-query(large) {
             flex-flow: row;
             justify-content: space-around;
+            padding-left: 0;
         }
     }
     &__links {
-        width: 90%;
+        max-width: 450px;
+        width: 100%;
         padding: 20px;
         border-radius: 20px;
         background-color: $color-bckgrd;
@@ -91,7 +202,7 @@ a {
             text-align: center;
         }
         &:hover, &--active {
-            background-color: #f5edff;
+            background-color: $color-1-1;
             filter: drop-shadow(0 5px 3px darken($color-bckgrd,20%));
             i {
                 color: $color-1;
@@ -130,6 +241,11 @@ a {
 
 .container {
     background-color: $color-bckgrd;
+    // padding: 3em 2em;
+    padding: 3em 4vw;
+    h1 {
+        padding-bottom: 1rem;
+    }
 }
 .resto-grid {
     display: flex;
@@ -168,6 +284,8 @@ a {
 // }
 
 .resto-card {
+    width: 100%;
+    max-width: 450px;
     $self: &;
     // offset-x | offset-y | blur-radius | spread-radius | color 
     box-shadow: 0 8px 20px -4px darken($color-bckgrd,15%);
@@ -178,15 +296,23 @@ a {
             opacity: 0.9;
         }
     }
+    // The standard practice for maintaining image aspect ratio is to wrap
+    // the image with another element (div). The wrapping div controls
+    // the image scaling. Then set width:100% and height:auto; on the img.
+    // Likewise you can also set a max-width on the img so it doesn’t grow larger than it’s native width.
     &__media {
-        width: 344px;
-        height: 194px;
+        width: 100%;
+        // height: 208px;
+        // height: 194px;
         position: relative;
     }
     &__image {
         display: block;
         width: 100%;
-        height: 100%;
+        height: auto;
+        // aspect-ratio: attr(width)/attr(height);
+        // aspect-ratio: 16 /9;
+        aspect-ratio: 1 /0.52;
         object-fit: cover;
         border-radius: 15px 15px 0 0;
     }
@@ -194,66 +320,115 @@ a {
         background-color: $color-3;
         color: $color-3-1;
         border-radius: 3px;
-        padding: 5px 20px;
+        padding: 5px 25px;
         position: absolute;
         top: 1rem;
         right: 1rem;
     }
     &__primary {
+        width: 100%;
+        // height: auto;
+        aspect-ratio: 1 /0.23;
         background-color: white;
         border-radius: 0 0 15px 15px;
         position: relative;
-        padding: 18px 16px;
+        // padding: 18px 16px;
+        // padding: 0.8rem;
+        padding: 5%;
+        font-size: 100%;
     }
-    &__action--icon {
-        background-color: white;
-        position: absolute;
-        bottom: 2rem;
-        right: 1rem;
-        border: none;
-        :hover {
-            color: $color-1;
-            // background-color: $color-2;
-        }
+    &__actions {
+        // position: absolute;
+        // bottom: 2rem;
+        // right: 1rem;
+    //     font-size:2em;
+    }
+    &__byline {
+        font-weight: 300;
     }
 }
-    .resHeartMove {
-        height: 24px;
-        flex-grow: 1;
-        display: flex;
-        align-items: center;
-        justify-content: flex-end;
-        .resHeartContain {
-            right: 26px;
-        }
-        .resHeartTop{
-            color: gray;
-            z-index: 1;
-            font-size:2em;
-        }
+.resto-card {
+    position: relative;
+    &__actions {
+        position: absolute;
+        bottom: 10%;
+        right: 5%;
     }
-
-
-
-// .fa-heart {
-//     color: linear-gradient(170deg, $color-2, $color-1);
-//     // background-color: red;
-// }
-// .heart {
-//     fill: red;
-//     background-image: linear-gradient(170deg, $color-2, $color-1);
-// }
+}
+.ResHeartMove {
+    border: none;
+    background-color: white;
+    position: relative;
+    // Seems to have problems of icon cutting???
+    // z-index: 10;
+    font-size: 1.5rem;
+    height: fit-content;
+    &__bottom {
+        opacity: 1;
+        transition: opacity 1s;
+        
+    }
+    &:focus, &:hover {
+        & .ResHeartMove__bottom {
+            opacity: 0;
+        }
+        & .ResHeartMove__top {
+            opacity: 1;
+        } 
+    }
+    &__top {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+        // z-index: -1;
+        transition: opacity 2s;
+    }
+    .fas {
+        display: block;
+        background: -webkit-linear-gradient(#9356dc, #ff79da);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+}
+    // .resHeartMove {
+    //     height: 24px;
+    //     flex-grow: 1;
+    //     display: flex;
+    //     align-items: center;
+    //     justify-content: flex-end;
+    //     .resHeartContain {
+    //         right: 26px;
+    //     }
+    //     .resHeartTop{
+    //         z-index: 1;
+    //         font-size:2em;
+    //     }
+    // }
 
 
 
 // _footer.scss
 .footer {
+    // font-size: 0.8rem;
     background-color: #353535;
+    // padding: 10px 0 20px 10px;
+    padding: 1.5em 0 2em 1.5em;
+    line-height: 1.5em;
+    &__logo {
+        // width: 5%;
+    }
     * {
         color: white;
+        list-style: none;
     }
     img {
         filter: invert(1);
+        width: 120px;
+        padding-bottom: 10px;
+        // width: min(max(0.5rem, 2vw), 16px);
     }
     i {
         width: 25px;

@@ -1,0 +1,242 @@
+// body, html {
+//     height: 100%;
+//     margin: 0;
+//   }
+.background {
+    // Is there a better way to add this background image???
+    // width: 100%;
+    height: 32vh;
+    background-image: url("../../public/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
+    // background-color: $color-3;
+    // position: relative;
+    background-position: center;
+    // background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.menu {
+    // width: 80%;
+    background-color: $color-bckgrd;
+    border-radius: 40px 40px 0 0;
+    // position: absolute;
+    // top: 25vh;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 4rem;
+    &__name {
+        font-family: Shrikhand;
+        // font-size: 2rem;
+        font-size: clamp(1.5em, 0.5rem + 2vw, 2em);
+        // That's how I managed to get the menu on top of the image. Not perfect???
+        margin-top: -3rem;
+        margin-bottom: 2.5rem;
+        padding-top: 2rem;
+        padding-left: 0.5rem;
+        padding-right: 1rem;
+        // position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        button {
+            // font-size: 2rem;
+            // position: absolute;
+            // font-size: 36px;
+            background-color: $color-bckgrd;
+            // right: 0;
+            // top: 100%;
+            
+        }
+    } 
+}
+$num-dish: 3;
+$anim-dur: 2000ms;
+$anim-delay: $anim-dur/$num-dish;
+.section {
+    margin-bottom: 2.5rem;
+    &__title {
+        text-transform: uppercase;
+        position: relative;
+        // margin-top: 2.5rem;
+        margin-bottom: 1.5rem;
+        padding-left: 0.5rem;
+        font-weight: 300;
+        // ::after {}
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: -0.5rem;
+            // left: 0px;
+            width: 2rem;
+            height: .25rem;
+            background-color: $color-3;
+            transform-origin: left;
+            animation: section__accent 2000ms both;
+        }
+    }
+    &__dish {
+        background-color: white;
+        border-radius: 20px;
+        margin-bottom: 15px;
+        // padding: 10px 0;
+        box-shadow: 0 8px 20px -4px darken($color-bckgrd,15%);
+        // opacity: 0.5;
+        animation: dish $anim-dur both;
+        @for $i from 1 through $num-dish {
+            &--#{$i} {
+                animation-delay: $anim-delay*$i;
+            }
+        }
+    }
+}
+@keyframes section__accent {
+    0% {
+        transform: scaleX(0)
+    }
+}
+@keyframes dish {
+    0% {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+}
+
+.dish {
+    // max-width: 500px;
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    overflow: hidden;
+    cursor: pointer;
+    &:hover {
+        box-shadow: 0 8px 20px -4px darken($color-bckgrd,25%);
+        .dish__tick {
+            // transform: translateX(-100%);
+            i {
+                transform: rotate(0deg);
+            }
+        }
+        .dish__name {
+            width: (70%);
+            // background-color: khaki;
+        }
+        .dish__price {
+            // transform: translateX(-100%);
+        }
+    }
+    &__name {
+        // background-color: $color-1;
+        padding: 10px;
+        width: 85%;
+        flex: none;
+        transition: width 2s ease-out;
+        /* Overflow text will be replaced by 3 dots */
+        h3, p {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        p {
+            font-weight: 300;
+        }
+    }
+    &__price {
+        // background-color: $color-2;
+        padding-bottom: 10px;
+        text-align: center;
+        align-self: flex-end;
+        margin: 0 auto;
+        width: 15%;
+        flex: none;
+        // transform-origin: left;
+        // transform: translateX(0);
+        // transition: transform 2s ease-out;
+    }
+    &__tick {
+        background-color: $color-3;
+        width: 15%;
+        flex: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // visibility: hidden;
+        // transform-origin: left;
+        // transform: translateX(0);
+        // transition: transform 2s ease-out;
+        i {
+            color: white;
+            // text-align: center;
+            transform: rotate(-540deg);
+            transition: transform 2s ease-out;
+        }
+    }
+}
+
+// .menu-select {
+//     // This selector is used to select elements with a specified attribute and value
+//     input[type="checkbox"] {
+//         // appearance: none;
+//         &:checked {
+//         //     .dish {
+//         //         box-shadow: 0 8px 20px -4px darken($color-bckgrd,25%);
+//         //     }
+//         //     .dish__tick {
+//         //         i {
+//         //             transform: rotate(0deg);
+//         //         }
+//         //     }
+//             .dish__name {
+//                 width: (70%);
+//                 background-color: khaki;
+//             }
+//         }
+//     }
+// }
+
+input[type="checkbox"] {
+    appearance: none;
+    &:checked {
+        ~ .dish__name {
+            width: (70%);
+        }
+        ~ .dish__tick {
+            background-color: darken($color-3, 10%);
+            i {
+                transform: rotate(0);
+            }
+        }
+    }
+}
+// media query for mobile with checked and unchecked behavior???
+@media (pointer: coarse) {
+    input[type="checkbox"] {
+        appearance: none;
+        &:checked {
+            ~ .dish__name {
+                width: (70%);
+            }
+            ~ .dish__tick {
+                // background-color: darken($color-3, 10%);
+                i {
+                    transform: rotate(0);
+                }
+            }
+        }
+    }
+}
+
+
+.form__submit {
+    @include btn;
+    width: 35%;
+    display: block;
+    margin: 0 auto;
+}
+.menu__name {
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.menu-select {
+    max-width: 500px;
+    margin: auto;
+}
