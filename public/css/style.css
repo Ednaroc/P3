@@ -31,7 +31,7 @@ body {
 }
 .menu__name {
   font-family: Shrikhand;
-  font-size: clamp(1.5em, 0.5rem + 2vw, 2em);
+  font-size: 1.8em;
   margin-top: -3rem;
   margin-bottom: 2.5rem;
   padding-top: 2rem;
@@ -100,14 +100,16 @@ body {
   overflow: hidden;
   cursor: pointer;
 }
-.dish:hover {
-  box-shadow: 0 8px 20px -4px #b6b6b6;
-}
-.dish:hover .dish__tick i {
-  transform: rotate(0deg);
-}
-.dish:hover .dish__name {
-  width: 70%;
+@media (pointer: fine) {
+  .dish:hover {
+    box-shadow: 0 8px 20px -4px #b6b6b6;
+  }
+  .dish:hover .dish__tick i {
+    transform: rotate(0deg);
+  }
+  .dish:hover .dish__name {
+    width: 70%;
+  }
 }
 .dish__name {
   padding: 10px;
@@ -152,24 +154,10 @@ input[type=checkbox] {
 input[type=checkbox]:checked ~ .dish__name {
   width: 70%;
 }
-input[type=checkbox]:checked ~ .dish__tick {
-  background-color: #71d7be;
-}
 input[type=checkbox]:checked ~ .dish__tick i {
   transform: rotate(0);
 }
 
-@media (pointer: coarse) {
-  input[type=checkbox] {
-    appearance: none;
-  }
-  input[type=checkbox]:checked ~ .dish__name {
-    width: 70%;
-  }
-  input[type=checkbox]:checked ~ .dish__tick i {
-    transform: rotate(0);
-  }
-}
 .form__submit {
   border: none;
   border-radius: 50px;
@@ -177,7 +165,7 @@ input[type=checkbox]:checked ~ .dish__tick i {
   color: white;
   background-image: linear-gradient(170deg, #ff79da, #9356dc);
   filter: drop-shadow(0 5px 3px #dddddd);
-  width: 35%;
+  width: 45%;
   display: block;
   margin: 0 auto;
 }
