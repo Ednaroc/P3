@@ -81,16 +81,19 @@ a {
 // _header.scss
 .header {
     // padding: 10px;
-    height: 50px;
+    height: 60px;
     width: 100%;
     // display: flex;
     // align-items: center;
     // justify-content: center;
     position: relative;
     &__logo {
+        // 
+        height: 50%;
         // border: 1px dashed black;
+        text-align: center;
         img {
-            width: 90%;
+            width: 88%;
         }
         margin: 0;
         padding: 0;
@@ -113,33 +116,46 @@ a {
 }
 
 // _form.scss
+input[type=search]::-ms-clear {  display: none; width : 0; height: 0; }
+input[type=search]::-ms-reveal {  display: none; width : 0; height: 0; }
+
+/* clears the 'X' from Chrome */
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration { display: none; }
+
 .search {
     text-align: center;
     background-color: $color-form;
     padding: 10px;
     box-shadow: inset 0 5px 3px -3px darken($color-form,15%);
+    
+    // display: flex ;
+    // flex-flow: column;
+    // justify-content: baseline;
+    // align-items: center;
     input {
         border: none;
         background-color: $color-form;
         color: #353535;
-        font: 600 0.85rem 'Roboto';
+        font: 600 1rem 'Roboto';
         // text-align: center;
-        // font-weight: 600;
-        // font-family: 'Roboto';
-        // font-size: 0.85rem;
         &:focus {
             outline: none;
         }
         padding: 0.5em;
         &::placeholder {
-            font: 600 0.9rem 'Roboto';
+            font: 600 1rem 'Roboto';
         }
     }
     button {
+        // text-align: center;
         border: none;
         color: #353535;
-        margin-right: 10px;
+        // margin-right: 10px;
         font-size: 1rem;
+        margin-left: 2.5rem;
     }
 }
 
@@ -149,7 +165,7 @@ a {
     background-color: $color-bckgrd;
     padding: 2em 0 4em 0;
     &__byline {
-        margin: 2.2em;
+        margin: 2.2em 2.1em;
         font-weight: 300;
     }
     &__nav {
@@ -165,14 +181,15 @@ a {
         // }
         @include btn;
         font-weight: 400;
+        padding: 16px 24px;
     }
 }
 
 
 .steps {
-    padding: 3em 4vw;
+    padding: 3em 4vw 4em 4vw;
     &__heading {
-        padding-bottom: 1.5rem;
+        padding-bottom: 1.2rem;
     }
     &__steps {
         // border: 1px dashed black;
@@ -244,7 +261,7 @@ a {
     // padding: 3em 2em;
     padding: 3em 4vw;
     h1 {
-        padding-bottom: 1rem;
+        padding-bottom: 1.2rem;
     }
 }
 .resto-grid {
@@ -258,30 +275,6 @@ a {
         flex-flow: row wrap;
     }
 }
-
-// .resto-grid {
-//     width: 90%;
-//     max-width: 1000px;
-//     margin: 0 auto;
-//     display: grid;
-//     // each column will take up a single fraction of those available
-//     grid-template-columns: 1fr;
-//     // row heights will be determined purely by the content
-//     grid-template-rows: auto;
-//     grid-gap: 20px;
-//     border-color: red;
-// }
-// @media only screen and (min-width: 600px) {
-//     .resto-grid {
-//         grid-template-columns: 1fr 1fr;
-//     }  
-//   }
-// @media only screen and (min-width: 850px) {
-//     .resto-grid {
-//         // grid-template-columns: 1fr 1fr 1fr 1fr;
-//         grid-template-columns: repeat(4, 1fr);
-//     }
-// }
 
 .resto-card {
     width: 100%;
@@ -328,14 +321,14 @@ a {
     &__primary {
         width: 100%;
         // height: auto;
-        aspect-ratio: 1 /0.23;
+        // aspect-ratio: 1 /0.23;
         background-color: white;
         border-radius: 0 0 15px 15px;
         position: relative;
         // padding: 18px 16px;
-        // padding: 0.8rem;
-        padding: 5%;
-        font-size: 100%;
+        padding: 0.8rem;
+        // padding: 5%;
+        // font-size: 100%;
     }
     &__actions {
         // position: absolute;
@@ -393,22 +386,6 @@ a {
         -webkit-text-fill-color: transparent;
     }
 }
-    // .resHeartMove {
-    //     height: 24px;
-    //     flex-grow: 1;
-    //     display: flex;
-    //     align-items: center;
-    //     justify-content: flex-end;
-    //     .resHeartContain {
-    //         right: 26px;
-    //     }
-    //     .resHeartTop{
-    //         z-index: 1;
-    //         font-size:2em;
-    //     }
-    // }
-
-
 
 // _footer.scss
 .footer {
@@ -433,4 +410,32 @@ a {
     i {
         width: 25px;
     }
+}
+
+.intro__heading, .steps__heading, #container__heading {
+    font-size: 1.5rem;
+}
+
+
+// , 
+.intro__byline, .resto-card__byline, .resto-card__heading {
+    font-size: 1.1rem;
+}
+
+// .search[placeholder], ,  * 
+.intro__nav, .steps__links, .footer__nav {
+    font-size: 1rem;
+}
+
+.resto-card__media-content {
+    font-size: 0.9rem;
+}
+
+.steps span {
+    font-size: 0.9rem;
+    font-weight: 300;
+}
+
+.resto-card__byline {
+    line-height: 1.5;
 }

@@ -5,7 +5,7 @@
 .background {
     // Is there a better way to add this background image???
     // width: 100%;
-    height: 32vh;
+    height: 34vh;
     background-image: url("../../public/images/restaurants/toa-heftiba-DQKerTsQwi0-unsplash.jpg");
     // background-color: $color-3;
     // position: relative;
@@ -29,7 +29,7 @@
         // font-size: clamp(1.5em, 0.5rem + 2vw, 2em);
         // That's how I managed to get the menu on top of the image. Not perfect???
         margin-top: -3rem;
-        margin-bottom: 2.5rem;
+        margin-bottom: 1.5rem;
         padding-top: 2rem;
         padding-left: 0.5rem;
         padding-right: 1rem;
