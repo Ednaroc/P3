@@ -10,7 +10,7 @@
         opacity: 1;
         transition: opacity 1s;
     }
-    &:focus, &:hover {
+    &:focus, &:hover, &:active {
         & .ResHeartMove__bottom {
             opacity: 0;
         }

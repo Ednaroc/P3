@@ -27,6 +27,7 @@
     border: none;
     border-radius: 50px;
     font-weight: 400;
+    font-family: 'Roboto', sans-serif;
     padding: 16px 24px;
     color: $color-white;
     background-image: linear-gradient(170deg, $color-2, $color-1);
@@ -37,3 +38,9 @@
     }
 }
 
+// @mixin has-nth($expression, $element: '*') {
+//     &:nth-last-child(#{$expression}):first-child,
+//     &:nth-last-child(#{$expression}):first-child ~ #{$element} {
+//         @content;
+//     }
+// }
