@@ -11,7 +11,7 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;500;700&family=Shrikhand&display=swap" rel="stylesheet">
-        <title>Ohmyfood | Menu 1</title>
+        <title>Ohmyfood | Le Gourmand</title>
     </head>
     <body>
         <header class="header">
@@ -22,28 +22,29 @@
         </header>
         <main>
             <div class="background">
-                <!-- <img src="public/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt=""> -->
+                <img src="public/images/restaurants/louis-hansel-shotsoflouis-qNBGVyOCY8Q-unsplash.jpg" alt="">
             </div>
             <div class="menu">
                 <div class="menu__name">
-                    Bastille
+                    Le Gourmand
                     <button class="ResHeartMove" aria-pressed="false" aria-label="Add to favorites" title="Add to favorites">
                         <div class="ResHeartMove__bottom"><i class="far fa-heart"></i></div>
                         <div class="ResHeartMove__top"><i class="fas fa-heart"></i></div>
                     </button>
                 </div>
-                <form class="menu-select" action="#" method="post" target="_blank">
+                <form class="menu__form" action="#" method="post" target="_blank">
                     <div class="section">
                         <div class="section__title">
                             Entrees
                             <div class="section__title--accent"></div>
                         </div>
-                        <label class="dish__select" for="entree-1" >
+                        <!-- The for attribute of <label> must be equal to the id attribute of the related element to bind them together. -->
+                        <label for="entree-1" >
                             <div class=" dish section__dish section__dish--1">
                                 <input class="dish__select" type="checkbox" id="entree-1" name="entree" value="entree-1"/>
                                 <div class="dish__name">
-                                    <h3>Citrus Squid Carpacio</h3>
-                                    <p>with orange zest</p>
+                                    <h3>Tuna Carpacio</h3>
+                                    <p>seasoned with yuzu</p>
                                 </div>
                                 <div class="dish__price">25€</div>
                                 <div class="dish__tick">
@@ -51,12 +52,12 @@
                                 </div>
                             </div>
                         </label>
-                        <label class="dish__select" for="entree-2" >
+                        <label for="entree-2" >
                             <div class=" dish section__dish section__dish--2">
                                 <input class="dish__select" type="checkbox" id="entree-2" name="entree" value="entree-2"/>
                                 <div class="dish__name">
-                                    <h3>Grandmother's Vegetable Soup</h3>
-                                    <p>Carrots, parsnips, Jerusalem artichoke</p>
+                                    <h3>Crunchy Lobster Croquettes</h3>
+                                    <p>with seasonal vegetables</p>
                                 </div>
                                 <div class="dish__price">35€</div>
                                 <div class="dish__tick">
@@ -64,12 +65,12 @@
                                 </div>
                             </div>
                         </label>
-                        <label class="dish__select" for="entree-3" >
+                        <label for="entree-3" >
                             <div class=" dish section__dish section__dish--3">
                                 <input class="dish__select" type="checkbox" id="entree-3" name="entree" value="entree-3"/>
                                 <div class="dish__name">
-                                    <h3>Onion Soup</h3>
-                                    <p>Revisited</p>
+                                    <h3>Mushroom Soup</h3>
+                                    <p>with truffles</p>
                                 </div>
                                 <div class="dish__price">20€</div>
                                 <div class="dish__tick">
@@ -87,8 +88,8 @@
                             <div class=" dish section__dish section__dish--1">
                                 <input class="dish__select" type="checkbox" id="main-1" name="main" value="main-1"/>
                                 <div class="dish__name">
-                                    <h3>Scallops</h3>
-                                    <p>with mashed parsnip</p>
+                                    <h3>Roast Chicken with Provincial Herbs</h3>
+                                    <p>with truffle cream</p>
                                 </div>
                                 <div class="dish__price">40€</div>
                                 <div class="dish__tick">
@@ -100,8 +101,8 @@
                             <div class=" dish section__dish section__dish--2">
                                 <input class="dish__select" type="checkbox" id="main-2" name="main" value="main-2"/>
                                 <div class="dish__name">
-                                    <h3>Magret de Canard</h3>
-                                    <p>with mashed potatoes</p>
+                                    <h3>Roasted Lobster</h3>
+                                    <p>with seasonal vegetables</p>
                                 </div>
                                 <div class="dish__price">35€</div>
                                 <div class="dish__tick">
@@ -113,8 +114,8 @@
                             <div class=" dish section__dish section__dish--3">
                                 <input class="dish__select" type="checkbox" id="main-3" name="main" value="main-3"/>
                                 <div class="dish__name">
-                                    <h3>Game Hen</h3>
-                                    <p>with vegetable gnocchis</p>
+                                    <h3>Angus Beef Ribs</h3>
+                                    <p>with mashed parsnips</p>
                                 </div>
                                 <div class="dish__price">44€</div>
                                 <div class="dish__tick">
@@ -132,8 +133,8 @@
                             <div class=" dish section__dish section__dish--1">
                                 <input class="dish__select" type="checkbox" id="dessert-1" name="main" value="dessert-2"/>
                                 <div class="dish__name">
-                                    <h3>Floral Ice Cream</h3>
-                                    <p>with hazelnut butter</p>
+                                    <h3>Assorted Dessert Plate</h3>
+                                    <p>Chef's choice</p>
                                 </div>
                                 <div class="dish__price">18€</div>
                                 <div class="dish__tick">
@@ -145,8 +146,8 @@
                             <div class=" dish section__dish section__dish--2">
                                 <input class="dish__select" type="checkbox" id="dessert-2" name="main" value="dessert-2"/>
                                 <div class="dish__name">
-                                    <h3>Chocolate Lava Cake</h3>
-                                    <p>Revisited</p>
+                                    <h3>Cr&#232;me Brul&#233;e</h3>
+                                    <p>revisited</p>
                                 </div>
                                 <div class="dish__price">22€</div>
                                 <div class="dish__tick">
@@ -158,8 +159,8 @@
                             <div class=" dish section__dish section__dish--3">
                                 <input class="dish__select" type="checkbox" id="dessert-3" name="main" value="dessert-3"/>
                                 <div class="dish__name">
-                                    <h3>Napolean</h3>
-                                    <p>with blueberries and marzipan</p>
+                                    <h3>Tiramisu</h3>
+                                    <p>with hazelnuts</p>
                                 </div>
                                 <div class="dish__price">23€</div>
                                 <div class="dish__tick">
@@ -169,7 +170,7 @@
                         </label>
                     </div>
                     <input type="hidden" id="res-name" name="res-name" value="Bastille">
-                    <button class="form__submit" type="submit">Order</button>
+                    <button class="btn form__submit" type="submit">Order</button>
                 </form>
             </div>
         </main>

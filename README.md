@@ -12,8 +12,8 @@ A link to your GitHub repository.
 A link to your web page (located in the README of your GitHub repository).
 
 ## Skills
-Implement design effects using CSS & Sass
-Ensure design consistency on a website
-Develop a navigation structure for a website
-Track a code project with version control on GitHub
-Set up a development environment
+* Implement design effects using CSS & Sass
+* Ensure design consistency on a website
+* Develop a navigation structure for a website
+* Track a code project with version control on GitHub
+* Set up a development environment

@@ -3,27 +3,37 @@
         @content;
     }
 }
-
-@mixin transition-ease {
-    transition: all 0.5s ease-in-out;
-}
-
-@mixin btn {
-    border: none;
-    border-radius: 50px;
-    padding: 12px 24px;
-    color: white;
-    background-image: linear-gradient(170deg, $color-2, $color-1);
-    filter: drop-shadow(0 5px 3px darken($color-bckgrd,10%));
-    // opacity??
-    &:hover {
-        background-image: linear-gradient(170deg, lighten($color-2, 10%), lighten($color-1, 10%));
-        filter: drop-shadow(0 5px 3px darken($color-bckgrd,20%));
-    }
-}
-
 @mixin interaction-query($pointing-quality) {
     @media (pointer: $pointing-quality) {
         @content;
     }
 }
+
+@mixin shadow-drop ($color: $color-bckgrd) {
+    filter: drop-shadow(0 5px 3px darken($color,10%));
+    &:hover, &--active {
+        filter: drop-shadow(0 5px 3px darken($color,20%));
+    }
+}
+@mixin shadow-box ($color: $color-bckgrd) {
+    // offset-x | offset-y | blur-radius | spread-radius | color 
+    box-shadow: 0 8px 20px -4px darken($color,15%);
+    &:hover {
+        box-shadow: 0 8px 20px -4px darken($color,25%);
+    }
+}
+
+@mixin btn {
+    border: none;
+    border-radius: 50px;
+    font-weight: 400;
+    padding: 16px 24px;
+    color: $color-white;
+    background-image: linear-gradient(170deg, $color-2, $color-1);
+    @include shadow-drop;
+    // opacity??
+    &:hover {
+        background-image: linear-gradient(170deg, lighten($color-2, 10%), lighten($color-1, 10%));
+    }
+}
+
