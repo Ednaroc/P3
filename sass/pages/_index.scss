@@ -119,7 +119,7 @@ input[type="search"]::-webkit-search-results-decoration {display: none;}
 .container {
     background-color: $color-bckgrd;
     padding: 3em 4vw;
-    h1 {
+    &__heading {
         padding-bottom: 1.2rem;
     }
 }

@@ -28,6 +28,9 @@
         // z-index: -1;
         transition: opacity 2s;
     }
+    .far {
+        display: block;
+    }
     .fas {
         display: block;
         background: -webkit-linear-gradient(#9356dc, #ff79da);
