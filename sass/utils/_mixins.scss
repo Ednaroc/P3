@@ -35,6 +35,7 @@
     // opacity??
     &:hover {
         background-image: linear-gradient(170deg, lighten($color-2, 10%), lighten($color-1, 10%));
+        // transition: background-image 6s; ???
     }
 }
 
