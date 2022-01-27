@@ -8,8 +8,8 @@ In addition to having a classic reservation system, customers will be able to se
 No more wait times in restaurants!
 
 ## Deliverables
-A link to your GitHub repository.
-A link to your web page (located in the README of your GitHub repository).
+* A link to your GitHub repository: https://github.com/Ednaroc/P3
+* A link to your web page (located in the README of your GitHub repository): https://ednaroc.github.io/P3/index.html
 
 ## Skills
 * Implement design effects using CSS & Sass
