@@ -30,12 +30,33 @@
     font-family: 'Roboto', sans-serif;
     padding: 16px 24px;
     color: $color-white;
-    background-image: linear-gradient(170deg, $color-2, $color-1);
     @include shadow-drop;
-    // opacity??
+    background-image: linear-gradient(170deg, $color-2, $color-1);
+    position: relative;
+    // So the button text sits on top of the lighter background.
+    z-index: 1;
+    // opacity: 1;
+    // transition: opacity 0.5s ease-out;
     &:hover {
+        // background-image: linear-gradient(170deg, lighten($color-2, 10%), lighten($color-1, 10%));
+        &::after {
+            opacity: 1;
+        }
+    }
+    &::after {
+        // Animating on hover the background-image using opacity on the ::after pseudo-element
+        // to make the gradient lighter (but not creating a transparent button). It acts as
+        // a color canvas.
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
         background-image: linear-gradient(170deg, lighten($color-2, 10%), lighten($color-1, 10%));
-        // transition: background-image 6s; ???
+        opacity: 0;
+        z-index: -1;
+        transition: opacity 0.5s ease-out;
     }
 }
 

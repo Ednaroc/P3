@@ -4,6 +4,7 @@
     z-index: -1;
     img {
         height: 34vh;
+        // height: 34vmin;
         width: 100%;
         object-fit: cover;
     }
@@ -46,10 +47,12 @@
 
 
 // MENU SETTINGS AND ANIMATIONS ---------------------------------------------------------
-$num-dish: 5;
-$anim-dur: 2000ms;
-$anim-delay: calc($anim-dur/$num-dish);
 .section {
+    // Local variables specific to this selector
+    $_num-dish: 5;
+    $_anim-dur: 2000ms;
+    $_anim-delay: calc($_anim-dur/$_num-dish);
+
     margin-bottom: 2.5rem;
     &__title {
         text-transform: uppercase;
@@ -69,10 +72,10 @@ $anim-delay: calc($anim-dur/$num-dish);
         }
     }
     &__dish {
-        animation: dish-appear $anim-dur both;
-        @for $i from 1 through $num-dish {
+        animation: dish-appear $_anim-dur both;
+        @for $i from 1 through $_num-dish {
             &--#{$i} {
-                animation-delay: $anim-delay*$i;
+                animation-delay: $_anim-delay*$i;
             }
         }
     }
